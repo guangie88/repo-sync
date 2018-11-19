@@ -1,0 +1,13 @@
+{
+    "commit_glob": "repos/*.commit",
+    "commit_regex": "\\d{8}-\\d{6}\.commit",
+    "commit_count": 20,
+
+    "diff_glob": "repos/*.diff*",
+    "diff_regex": "\\d{8}-\\d{6}\.diff*",
+    "diff_count": 20,
+
+    "summary_glob": "repos/*-summary.json",
+    "summary_regex": ".+",
+    "summary_count": 20
+}

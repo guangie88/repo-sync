@@ -1,0 +1,71 @@
+{
+    "pidfile": ".sync-send",
+    "datetime_fmt": "%Y%m%d-%H%M%S.%L",
+
+    "sync_root_dir": "repos/repo",
+    "patch_root_dir": "repos",
+    "log_file": "logs/sync-send.log",
+
+    "commit_script": "scripts/fcommit.rb",
+    "diff_script": "scripts/zdiff.rb",
+    "enqueue_script": "scripts/enqueue.rb",
+    "send_script": "scripts/send.rb",
+    "cleanup_script": "scripts/cleanup.rb",
+
+    "cleanup_config_file": "config/cleanup-send.json",
+
+    "other_commit_files_glob": "%{patch_root_dir}/*.commit",
+    "commit_first_file_fmt": "%{patch_root_dir}/00000000-000000.000.commit",
+    "commit_file_fmt": "%{patch_root_dir}/%{datetime}.commit",
+
+    "diff_file_fmt": "%{patch_root_dir}/linux-repo.%{prev_commit_hash}-%{datetime}.diff",
+    "split_per_file_byte": "1G",
+    "split_summary_file_fmt": "%{patch_root_dir}/linux-repo.%{prev_commit_hash}-summary.json",
+    "split_root_dir": "repos",
+
+    "enqueue_state_file": "config/enqueue-state.json",
+
+    "send_cmd_fmt": "curl -F \"user=tnlarge\" -F \"file=@%{file_name}\" -k https://submit.dso.org.sg/submit/cmd/submit.php",
+    "simulate_cmd_fmt": "cp %{file} /var/www/html/files/%{file_name}",
+    "send_simulate_flag": true,
+    "send_count": 50,
+
+    "repos":
+    {
+        "dummy":
+        {
+            "dir_name": "dummy",
+            "script_file": "sync-scripts/dummy-sync.rb"
+        }
+
+        /*"ubuntu":
+        {
+            "dir_name": "ubuntu",
+            "script_file": "sync-scripts/ubuntu-sync.rb"
+        },
+
+        "ubuntu-dep11":
+        {
+            "dir_name": "ubuntu",
+            "script_file": "sync-scripts/ubuntu-dep11-sync.rb"
+        },
+
+        "centos":
+        {
+            "dir_name": "centos",
+            "script_file": "sync-scripts/centos-sync.rb"
+        },
+
+        "epel":
+        {
+            "dir_name": "epel",
+            "script_file": "sync-scripts/epel-sync.rb"
+        },
+        
+        "docker-images":
+        {
+            "dir_name": "docker-images",
+            "script_file": "sync-scripts/docker-images-sync.rb"
+        }*/
+    }
+}

@@ -1,0 +1,4 @@
+sync_root_dir_path = "/home/weiguang/repo-sync/repos/repo/jenkins"
+url_list_json_file_path = "/home/weiguang/repo-sync/sync-scripts/jenkins-sync/output/url-list.json"
+accepted_file_exts = [ "war", "hpi" ]
+download_thread_count = 12 

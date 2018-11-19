@@ -1,0 +1,20 @@
+{
+    "pidfile": ".sync-recv",
+
+    "sync_root_dir": ".repos/repo",
+    "patch_root_dir": ".repos",
+    "log_file": "logs/sync-recv.log",
+
+    "recv_script": "scripts/recv.rb",
+    "dequeue_script": "scripts/dequeue.rb",
+    "apply_script": "scripts/zapply.rb",
+    "cleanup_script": "scripts/cleanup.rb",
+
+    "cleanup_config_file": "config/cleanup-recv.json",
+
+    "server_uri": "localhost",
+    "dir_uri": "files",
+    "dequeue_state_file": "config/dequeue-state.json",
+    "summary_file_name_fmt": "linux-repo.%{hash}-summary.json",
+    "join_regex_pattern_fmt": "%{hash}"
+}
